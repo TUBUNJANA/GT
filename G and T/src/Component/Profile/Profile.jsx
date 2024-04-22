@@ -29,7 +29,7 @@ function Profile() {
 
     // console.log("The token data is = " + JSON.stringify(headers));
     axios
-      .get("http://localhost:5000/api/auth/user", { headers })
+      .get(import.meta.env.VITE_BACKEND_URL+"/api/auth/user", { headers })
       .then((response) => {
         setData(response.data.msg);
         setSpinner(false);
