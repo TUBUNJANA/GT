@@ -24,7 +24,7 @@ function Dashboard2() {
   useEffect(()=>{
     console.log("This is home page useEffect")
     axios
-    .get("http://localhost:5000/api/auth/user", { headers })
+    .get(import.meta.env.VITE_BACKEND_URL+"/api/auth/user", { headers })
     .then((response) => {
       isTokenAvailFuntion(response.data.msg);
     })

@@ -97,7 +97,7 @@ function Profile() {
   const handleUpdate = (event) => {
     setSpinner(true);
     axios
-      .put("http://localhost:5000/api/auth/userUpdate", Data, { headers })
+      .put(import.meta.env.VITE_BACKEND_URL+"/api/auth/userUpdate", Data, { headers })
       .then((response) => {
         console.log("The return data is = " + JSON.stringify(response));
         setIsEdit(!isEdit);

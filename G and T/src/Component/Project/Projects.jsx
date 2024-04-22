@@ -29,7 +29,7 @@ export default function Projects() {
   };
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/auth/allAssignedProject", { headers })
+      .get(import.meta.env.VITE_BACKEND_URL+"/api/auth/allAssignedProject", { headers })
       .then(async (response) => {
         console.log(
           "The return data  id of allAssignedProject = " +
@@ -74,7 +74,7 @@ export default function Projects() {
     console.log("logged  hours = " + loggedHour);
     axios
       .post(
-        "http://localhost:5000/api/auth/timeLogCreation",
+        import.meta.env.VITE_BACKEND_URL+"/api/auth/timeLogCreation",
         {
           LoggedHours: loggedHour,
           Date: loggedDate,

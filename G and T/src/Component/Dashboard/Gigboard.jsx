@@ -37,7 +37,7 @@ function Dashboard() {
   };
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/auth/allProject", { headers })
+      .get(import.meta.env.VITE_BACKEND_URL+"/api/auth/allProject", { headers })
       .then((result) => {
         console.log("The value of ppm data is = " + JSON.stringify(result));
         setData(result.data.data);

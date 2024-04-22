@@ -39,7 +39,7 @@ export default function LoginPage2() {
   const handleAuthentication = (event) => {
     event.preventDefault();
     axios
-      .post("http://localhost:5000/api/auth/login", data)
+      .post(import.meta.env.VITE_BACKEND_URL+"/api/auth/login", data)
       .then((data) => {
         if (data.status === 200) {
           setData({

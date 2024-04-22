@@ -238,7 +238,7 @@ const Calender = () => {
       };
 
       axios
-        .post("http://localhost:5000/api/auth/createSchedule", newStateObject, {
+        .post(import.meta.env.VITE_BACKEND_URL+"/api/auth/createSchedule", newStateObject, {
           headers,
         })
         .then((response) => {
@@ -264,7 +264,7 @@ const Calender = () => {
       _id: data.id,
       };
       axios
-        .put("http://localhost:5000/api/auth/updateSchedule", newStateObject, {
+        .put(import.meta.env.VITE_BACKEND_URL+"/api/auth/updateSchedule", newStateObject, {
           headers,
         })
         .then((response) => {
@@ -286,7 +286,7 @@ const Calender = () => {
   };
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/auth/retriveSchedule", { headers })
+      .get(import.meta.env.VITE_BACKEND_URL+"/api/auth/retriveSchedule", { headers })
       .then((response) => {
         // setSavedScheduleData(response.data.scheduleData);
 
@@ -327,7 +327,7 @@ const Calender = () => {
       _id: data.id,
     };
     axios
-      .delete("http://localhost:5000/api/auth/deleteSchedule", {
+      .delete(import.meta.env.VITE_BACKEND_URL+"/api/auth/deleteSchedule", {
         headers: headers,
         data: newStateObject,
       })

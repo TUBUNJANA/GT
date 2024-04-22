@@ -43,7 +43,7 @@ function MyComponent() {
           console.log("Set data is = " + JSON.stringify(dataToSend));
           await axios
             .post(
-              "http://localhost:5000/api/auth/projectCreation",
+              import.meta.env.VITE_BACKEND_URL+"/api/auth/projectCreation",
               parsedData,
               {
                 headers,
@@ -85,7 +85,7 @@ function MyComponent() {
   };
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/auth/allAssignProject", { headers })
+      .get(import.meta.env.VITE_BACKEND_URL+"/api/auth/allAssignProject", { headers })
       .then(async (response) => {
         console.log(
           "The return data of allAssignedProject = " +
@@ -101,7 +101,7 @@ function MyComponent() {
   }, []);
   const onClickSubmit = (e) => {
     axios
-      .put("http://localhost:5000/api/auth/updateStatus", body, { headers })
+      .put(import.meta.env.VITE_BACKEND_URL+"/api/auth/updateStatus", body, { headers })
       .then(async (response) => {
         console.log(
           "The return data of update assign project status is = " +

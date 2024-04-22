@@ -14,7 +14,7 @@ function Table({ data }) {
     const data = JSON.parse(event.target.id);
     axios
       .post(
-        "http://localhost:5000/api/auth/assignedProject",
+        import.meta.env.VITE_BACKEND_URL+"/api/auth/assignedProject",
         {
           projectDetails: data.Project,
           loggedDateHours: [],

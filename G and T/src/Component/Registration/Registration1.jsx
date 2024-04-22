@@ -189,7 +189,7 @@ function LoginPage2() {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post("http://localhost:5000/api/auth/register", Data)
+      .post(import.meta.env.VITE_BACKEND_URL+"/api/auth/register", Data)
       .then((data) => {
         console.log("the data is " + JSON.stringify(data));
         if (data.status === 200) {
